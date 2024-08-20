@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Todos App</h1>
+    <div>
+      <h2>Create a New Todos</h2>
+      <form onsubmit="return addTodo(event)">
+        <div>
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" />
+        </div>
+        <div>
+          <label for="description">Description</label>
+          <textarea name="description" id="description"></textarea>
+        </div>
+        <div>
+          <label for="dueDate">Due Date</label>
+          <input type="date" name="dueDate" id="dueDate" />
+        </div>
+        <div>
+          <label for="priority">Priority</label>
+          <input type="number" name="priority" id="priority" />
+        </div>
+        <div>
+          <label for="project">Project</label>
+          <select name="project" id="project">
+            <option value="default">Default</option>
+          </select>
+        </div>
+        <div>
+          <button type="submit" id="todosSubmit">Submit</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </div>
+    <div>
+      <h2>Create New Project</h2>
+      <form onsubmit="return addProject(event)">
+        <div>
+          <label for="projectName">Project</label>
+          <input type="text" name="projectName" id="project" />
+        </div>
+        <div>
+          <button id="projectSubmit">Create New Project</button>
+          <button type="reset">Reset</button>
+        </div>
+        <div>
+          <ul id="projectList"></ul>
+        </div>
+      </form>
+    </div>
+    <div id="todo"></div>
+    <div id="todoList"></div>
+
+    <div>
+      <button onclick="saveTodos()">Save</button>
+      <button onclick="loadTodos()">Load Todos</button>
+    </div>
+  </body>
+</html>
